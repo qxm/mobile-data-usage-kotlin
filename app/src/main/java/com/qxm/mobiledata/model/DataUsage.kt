@@ -18,6 +18,11 @@ data class DataUsage (
     val quarter: String
 )
 
+
+data class MobileDataUsages (
+    val datas: List<DataUsage>
+)
+
 data class Field (
     val type: String,
     val id: String

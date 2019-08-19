@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import com.qxm.mobiledata.databinding.ActivityMainBinding
 import com.qxm.mobiledata.model.DataUsage
+import com.qxm.mobiledata.model.MobileDataUsages
 import com.qxm.mobiledata.ui.MobileDataViewBinder
 import com.qxm.mobiledata.viewmodel.MobileDataVM
 import com.qxm.mobiledata.utils.funcextend.observe
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         binding.srl.setColorSchemeResources(R.color.colorPrimary)
         binding.rv.adapter = MultiTypeAdapter(mutableListOf<Any>()).apply {
-            register(DataUsage::class.java, MobileDataViewBinder(binding.vm))
+            register(MobileDataUsages::class.java, MobileDataViewBinder(binding.vm))
         }
         binding.rv.layoutManager = LinearLayoutManager(this)
     }
